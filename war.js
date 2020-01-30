@@ -1,36 +1,32 @@
-// DECK BUILD 
+// DECK BUILD
+// ACE HIGH
 
+// SPLIT THE DECK
 
+// PLACING OF EACH PLAYERS CARD
 
-// SPLIT THE DECK 
+// HIGHER CARD WINS
 
+// CARDS BEING PLACED BACK TO STACK OF WINNING PLAYER
 
+// WAR GAME _____------_____-----______----______-----
 
-// PLACING OF EACH PLAYERS CARD 
+// PLACEMENT OF 3 CARDS FROM EACH PLAYERS STACK FACE DOWN
 
+// PLACE OF 1 CARD UP FROM EACH STACK
 
-- Higher card takes both cards
+// WINNER
 
-- Cards place to bottom of winner's stack
+// TIE OR REPEAT
 
-- tie **WAR**
+// COLLECTION OF CARDS AFTER WIN
 
-- each player places 3 face down
+// END OF WAR GAME____-----______----____-----
 
-- Each place one face up
+// PLAYER'S CARDS REACH 0
 
-- Higher card takes whole pot
+// COUNTING OF ROUNDS
 
-- If tie, repeat until no tie
+// COUNTING OF WAR ROUNDS
 
-- Person loses all cards
-
-  - maybe a listener or function calling for when players cards array reaches 0
-
-**Things to remember**
-
-- count each round of hands, including war rounds
-
-- ace is high, so set correct placement of index
-
-- if one person is not able to finish a round of war because they dont have enough cards then they lose
+// COUNTING OF BOTH ROUNDS TOTAL
