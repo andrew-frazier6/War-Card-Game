@@ -1,6 +1,8 @@
 // DECK BUILD
 // ACE HIGH
 
+cards = ["AofS", "1ofS" "2ofS" "3ofS" "4ofS" "5ofS" "6ofS" "7ofS" "8ofS" "9ofS" "JofS" "QofS" "KofS"];
+
 // SPLIT THE DECK
 
 // PLACING OF EACH PLAYERS CARD
@@ -26,6 +28,7 @@
 // PLAYER'S CARDS REACH 0
 
 // COUNTING OF ROUNDS
+var rounds = function round() {};
 
 // COUNTING OF WAR ROUNDS
 
