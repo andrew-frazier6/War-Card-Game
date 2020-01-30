@@ -8,6 +8,17 @@ const cards = {
   c: ["2, 3, 4, 5, 6, 7, 8, 9, J, Q, K, A"]
 };
 console.log(cards.hearts);
+
+// PLAYER 1
+const playerOne = {
+
+}
+
+// PLAYER 2
+const playerTwo = {
+
+}
+
 // SPLIT THE DECK
 
 // PLACING OF EACH PLAYERS CARD
@@ -32,6 +43,8 @@ if (s[] == )
 
 // PLAYER'S CARDS REACH 0
 
+
+
 // COUNTING OF ROUNDS
 // var rounds = function round() {};
 
@@ -40,8 +53,24 @@ var totalRounds = {
 };
 var round = function count() {
     if (player1.cards -= 1 && player2.cards -= 1)
-        
+        return totalRounds.total;
 }
 // COUNTING OF WAR ROUNDS
 
 // COUNTING OF BOTH ROUNDS TOTAL
+
+// ALERT (PLAYER) WINS 
+ function endGame() {
+    if (playerOne.cards === 0) {
+        return alert("Player 1 Wins!")}   
+    else if (playerTwo.cards === 0) {
+        return alert("Player 2 Wins!")
+ }  else{
+     play()
+    //  referring to the master play function. Calling endgame function 
+    // at end of play function
+ }
+}
+
+
+
