@@ -46,54 +46,54 @@
 // cards played by each user, who
 // won the round, and how many cards each player now has.
 
-// function counter(){
-// if (totalRounds += 1){
-//     return alert("Round" + totalRounds)
-// }   else if (playerOne.cards === 0){
-//         return alert("Player 1 Wins!")
-// }   else if (playerTwo.cards === 0) {
-//         return alert("Player 2 Wins!")
-// }   else play()
+function counter(){
+if (totalRounds += 1){
+    return alert("Round" + totalRounds)
+}   else if (playerOne.cards === 0){
+        return alert("Player 1 Wins!")
+}   else if (playerTwo.cards === 0) {
+        return alert("Player 2 Wins!")
+}   else play()
 
-// };
+};
 
 // PLAYER 1
-// const playerOne = {
-//     cards: [],
+const playerOne = {
+    cards: [],
 // }
 //
 
 // PLAYER 2
-// const playerTwo = {
-//     cards: [],
+const playerTwo = {
+    cards: [],
 
 // }
 //
 
 // COUNTING ROUNDS
-// var totalRounds = {
-//     total: 0
-// };
+var totalRounds = {
+    total: 0
+};
 
-// function counter(){
-//     if (totalRounds.total += 1){
-//         return alert("Round" + totalRounds.total)
-//     }};
+function counter(){
+    if (totalRounds.total += 1){
+        return alert("Round" + totalRounds.total)
+    }};
 //
 
 // ALERT (PLAYER) WINS
-// function endGame() {
-//     if (playerOne.cards === 0) {
-//         return alert("Player 1 Wins!")}
-//     else if (playerTwo.cards === 0) {
-//         return alert("Player 2 Wins!")
-//  }  else{
-//      play()
-//  referring to the master play function. Calling endgame function
-// at end of play function
-//  }
-// }
-//
+function endGame() {
+    if (playerOne.cards === 0) {
+        return alert("Player 1 Wins!")}
+    else if (playerTwo.cards === 0) {
+        return alert("Player 2 Wins!")
+ }  else{
+     play()
+ referring to the master play function. Calling endgame function
+at end of play function
+ }
+}
+
 
 // THE DECK
 const cards = [
@@ -127,6 +127,28 @@ const cards = [
 // SPLIT THE DECK
 cards.length / 2;
 
+
+// create deck 
+
+deck = []
+suits = ["Hearts", "Spades", "Diamonds", "Clubs"]
+faces = [2,3,4,5,6,7,8,9,J,Q,K]
+
+function createDeck() {
+for (let i=0; i < length.suits; i ++)
+    for(let j = 0; j < length.faces; j++)
+
+    fulldeck.push(suits[i])
+    fulldeck.push(faces[j])
+}
+
+
+var array = [
+    {card}
+    {card}
+    {card}
+]
+
 function chunkArray(myArray, chunk_size) {
   var index = 0;
   var arrayLength = myArray.length;
@@ -146,11 +168,11 @@ var result = chunkArray(cards, 2);
 console.log(result);
 
 // WAR FUNCTION
-// function war(a, b) {
-//   if (playerOne(a) === playerTwo(b)) {
-//     return alert("WAR!!!!!");
-//   } else {
-//     play();
-//   }
-// }
+function war(a, b) {
+  if (playerOne(a) === playerTwo(b)) {
+    return alert("WAR!!!!!");
+  } else {
+    play();
+  }
+}
 //
