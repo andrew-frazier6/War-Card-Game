@@ -12,6 +12,7 @@ class Deck {
   constructor() {
     this.deck = [];
   }
+
   buildDeck(suits, faces) {
     for (let suit of suits) {
       for (let face of faces) {
@@ -20,6 +21,7 @@ class Deck {
     }
     return this.deck;
   }
+
   shuffle() {
     let counter = this.deck.length,
       temp,
@@ -29,30 +31,18 @@ class Deck {
       i = Math.floor(Math.random() * counter--);
       temp = this.deck[counter];
       this.deck[counter] = this.deck[i];
-      this.dick[i] = temp;
+      this.deck[i] = temp;
     }
+    return this.deck;
   }
 }
 // SHUFFLE DECK
-// function shuffle() {
-//   let counter = this.deck.length,
-//     temp,
-//     i;
 
-//   while (counter) {
-//     i = Math.floor(Math.random() * counter--);
-//     temp = this.deck[counter];
-//     this.deck[counter] = this.deck[i];
-//     this.dick[i] = temp;
-//   }
-// }
 const suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
 const faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 let deck = new Deck();
 deck.buildDeck(suits, faces);
 console.log(deck.shuffle());
-// console.log(deck.shuffle());
-// console.log(this.deck.shuffle());
 
 // PLACING OF EACH PLAYERS CARD
 
