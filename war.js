@@ -1,7 +1,48 @@
 // DECK BUILD
-// ACE HIGH
+// deck = [];
 
-// SPLIT THE DECK
+// card = {};
+
+// function buildDeck() {
+//   for (let i = 0; i < suits.length; i++) {
+//     for (let j = 0; j < faces.length; j++) {
+//       let card = {
+//         faces: faces[j],
+//         suits: suits[i]
+//       };
+//       deck.push(card);
+//       console.log(card);
+//     }
+//   }
+// }
+// buildDeck();
+
+// REBUILD OF DECK INTO OBJECT
+
+class Card {
+  constructor(suit, face) {
+    this.suit = suit;
+    this.face = face;
+  }
+}
+
+class Deck {
+  constructor() {
+    this.deck = [];
+  }
+  buildDeck(suits, faces) {
+    for (let suit of suits) {
+      for (let face of faces) {
+        this.deck.push(new Card(suit, face));
+      }
+    }
+    return this.deck;
+  }
+}
+const suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
+const faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+let deck = new Deck();
+console.log(deck.buildDeck(suits, faces));
 
 // PLACING OF EACH PLAYERS CARD
 
@@ -141,24 +182,19 @@
 
 // create deck
 
-deck = [];
-suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
-faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-card = {};
+// class Deck {
+//   constructor(suit, value) {
+//     this.suit = suit;
+//     this.value = value;
+//   }
+// }
 
-function buildDeck() {
-  for (let i = 0; i < suits.length; i++) {
-    for (let j = 0; j < faces.length; j++) {
-      let card = {
-        faces: faces[j],
-        suits: suits[i]
-      };
-      deck.push(card);
-    }
-  }
-}
-
-buildDeck();
+// class Card {
+//   constructor(suits, value) {
+//     this.suit = suit;
+//     this.value = value;
+//   }
+// }
 
 // JAVASCRIPT CHEAT SHEET
 
@@ -233,3 +269,23 @@ buildDeck();
 // assignWinnerCards()
 // determineWinner()
 // endGame()
+
+// creating classes and sub classes
+// class Animal {
+//   constructor(size, color, dangerous) {
+//     this.size = size;
+//     this.color = color;
+//     this.dangerous = dangerous;
+//   }
+// }
+
+// class Pet extends Animal {
+//   constructor(size, color, dangerous, habitat) {
+//     super(size, color, dangerous);
+
+//     this.habitat = habitat;
+//   }
+// }
+// const bear = new Pet("large", "black", false, "domestic");
+// console.log(bear);
+// //
