@@ -1,22 +1,4 @@
 // DECK BUILD
-// deck = [];
-
-// card = {};
-
-// function buildDeck() {
-//   for (let i = 0; i < suits.length; i++) {
-//     for (let j = 0; j < faces.length; j++) {
-//       let card = {
-//         faces: faces[j],
-//         suits: suits[i]
-//       };
-//       deck.push(card);
-//       console.log(card);
-//     }
-//   }
-// }
-// buildDeck();
-
 // REBUILD OF DECK INTO OBJECT
 
 class Card {
@@ -38,11 +20,39 @@ class Deck {
     }
     return this.deck;
   }
+  shuffle() {
+    let counter = this.deck.length,
+      temp,
+      i;
+
+    while (counter) {
+      i = Math.floor(Math.random() * counter--);
+      temp = this.deck[counter];
+      this.deck[counter] = this.deck[i];
+      this.dick[i] = temp;
+    }
+  }
 }
+// SHUFFLE DECK
+// function shuffle() {
+//   let counter = this.deck.length,
+//     temp,
+//     i;
+
+//   while (counter) {
+//     i = Math.floor(Math.random() * counter--);
+//     temp = this.deck[counter];
+//     this.deck[counter] = this.deck[i];
+//     this.dick[i] = temp;
+//   }
+// }
 const suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
 const faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 let deck = new Deck();
-console.log(deck.buildDeck(suits, faces));
+deck.buildDeck(suits, faces);
+console.log(deck.shuffle());
+// console.log(deck.shuffle());
+// console.log(this.deck.shuffle());
 
 // PLACING OF EACH PLAYERS CARD
 
