@@ -1,7 +1,7 @@
 let newBoxDeck = [];
-let suit = ["Hearts", "Spades", "Diamonds", "Clubs"];
+let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
 let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-let faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+let faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 let playerOne = [];
 let playerTwo = [];
 let playerOneTable = [];
@@ -35,13 +35,14 @@ let playerTwoTable = [];
 // }
 //  DECK #5
 function buildDeck() {
-  for (let i = 0; i < suit.length; i++) {
-    for (let j = 0; j < rank.length; j++) {
-      let playingCard = { rank: rank[i], suit: suit[j], face: face[j] };
+  for (let i = 0; i < faces.length; i++) {
+    for (let j = 0; j < suits.length; j++) {
+      let playingCard = { face: faces[i], suit: suits[j] };
       newBoxDeck.push(playingCard);
     }
   }
 }
+
 buildDeck();
 console.log(newBoxDeck);
 
