@@ -1,18 +1,34 @@
-// DECK BUILD
-// REBUILD OF DECK INTO OBJECT
-
+// PLAYER
+class Player {
+  constructor(name) {
+    this.name = name;
+    this.hand = [];
+    this.winnings = [];
+  }
+}
+// PLAYER INSTANCE
+const player1 = new Player("player 1");
+const player2 = new Player("player 2");
+// PLAYING TABLE
+class Table {
+  constructor(players) {
+    this.players = players;
+    this.inPlay = [];
+  }
+}
+// CARD
 class Card {
   constructor(suit, face) {
     this.suit = suit;
     this.face = face;
   }
 }
-
+//  DECK
 class Deck {
   constructor() {
     this.deck = [];
   }
-
+  // BUILD DECK
   buildDeck(suits, faces) {
     for (let suit of suits) {
       for (let face of faces) {
@@ -21,7 +37,7 @@ class Deck {
     }
     return this.deck;
   }
-
+  // SHUFFLE DECK
   shuffle() {
     let counter = this.deck.length,
       temp,
@@ -35,134 +51,77 @@ class Deck {
     }
     return this.deck;
   }
+  // DEAL DECK
+  deal() {
+    while (Player.hand.length < 26) {
+      Player.hand.push(this.deck.pop());
+    }
+    console.log(Player.hand);
+  }
 }
-// SHUFFLE DECK
-
+// DECK CONTENTS
 const suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
 const faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 let deck = new Deck();
 deck.buildDeck(suits, faces);
-console.log(deck.shuffle());
-
-// PLACING OF EACH PLAYERS CARD
-
-// learn about annonomous function. meaning one that calls itself
-
-// CARDS BEING PLACED BACK TO STACK OF WINNING PLAYER
-
-// WAR GAME _____------_____-----______----______-----
-// if (s[] == )
-// PLACEMENT OF 3 CARDS FROM EACH PLAYERS STACK FACE DOWN
-
-// PLACE OF 1 CARD UP FROM EACH STACK
-
-// WINNER
-
-// TIE OR REPEAT
-
-// COLLECTION OF CARDS AFTER WIN
-
-// END OF WAR GAME____-----______----____-----
-
-// PLAYER'S CARDS REACH 0 END GAME
-// while player 1 cards.length && player 2 cards.length > 0
-// continue play
-// when player 1 cards.length || player 2 cards.length = 0
-// end game
-
-// COUNTING OF ROUNDS
-// var rounds = function round() {};
-
-// var round = function count() {
-//     if (player1.cards -= 1 && player2.cards -= 1)
-//         return totalRounds.total;
+deck.shuffle();
+deck.deal();
+// TOTAL ROUNDS
+// let totalRounds = [];
+// function roundCounter(){
+//   if (totalRounds += 1){
+//       return alert("Round" + totalRounds)
+//   }   else if (playerOne.cards === 0){
+//           return alert("Player 1 Wins!")
+//   }   else if (playerTwo.cards === 0) {
+//           return alert("Player 2 Wins!")
+//   }   else play();
 // }
-// COUNTING OF WAR ROUNDS
+// // PLAY GAME FUNCTION
+// function playGame () {
+//   const [player1, player2] = this.players;
+//   const [playerdeck1, playerdeck2];
+// // WAR FUNCTION
+//   function  War () {
+//     constructor (player1,player2)
+//     if (player1 === player2) {
+//     a lert("War") }
+//     function war(a, b) {
+//       if (playerOne(a) === playerTwo(b)) {
+//         return alert("WAR!!!!!");
+//       } else {
+//         play();
+//       }
+//     }
+//   if (player1 > player2) {
+//       alert("Player1 wins!")
+//   };
 
-// COUNTING OF BOTH ROUNDS TOTAL
-
-// call back funtion. maybe possible calling reference to an event
-// listener or continuation of the game
-// function doWork(a) {
-//   console.log("Do Work")
-//   a();
-// }
-
-// function getPaid() {
-//   console.log("Cash Rules Everything Around Me!")
-// }
-
-// doWork(getPaid);
-
-// let suits = []
-// let faces = []
-// ;et deck = []
-// led card = {
-//   suit: ""
-//   face: ""
-// }
-
-// ROCK PAPER SCISCORS TIE
-
-// dealing out the cards
-// using modulus to say that every odd would go to player one and every even would got to player two
-
-// Searching for matching arrays
-// var str = "The rain in SPAIN stays mainly in the plain";
-// var res = str.match(/ain/gi);
-
-// POSSIBLE BETTER PRESENTATION OF CARDS
-// let arr = [1,2,3,4,5]
-// produces array with brackets
-// console.log(arr);
-// [1, 2, 3, 4, 5]
-// produces array without brackets
-// console.log(...arr)
-// 1 1 2 3 4 5
-// undefined
-
-// Sum(...array) = will add the sum of all the numbers
-
-// Print a message for each "round" of the game showing the
-// cards played by each user, who
-// won the round, and how many cards each player now has.
-
-// function counter(){
-// if (totalRounds += 1){
-//     return alert("Round" + totalRounds)
-// }   else if (playerOne.cards === 0){
-//         return alert("Player 1 Wins!")
-// }   else if (playerTwo.cards === 0) {
-//         return alert("Player 2 Wins!")
-// }   else play()
-
-// };
+//   if (player2 > player1) {
+//       alert("Player2 wins!");
+//   }
+//   if (round)
 
 // PLAYER 1
 // const playerOne = {
 //     cards: [],
 // }
-//
 
 // PLAYER 2
 // const playerTwo = {
 //     cards: [],
-
 // }
-//
 
-// COUNTING ROUNDS
+// // COUNTING ROUNDS
 // var totalRounds = {
 //     total: 0
 // };
-
 // function counter(){
 //     if (totalRounds.total += 1){
 //         return alert("Round" + totalRounds.total)
 //     }};
-//
 
-// ALERT (PLAYER) WINS
+// alert ("player "" wins)
 // function endGame() {
 //     if (playerOne.cards === 0) {
 //         return alert("Player 1 Wins!")}
@@ -175,88 +134,6 @@ console.log(deck.shuffle());
 //  }
 // }
 
-// THE DECK
-
-// SPLIT THE DECK
-// cards.length / 2;
-
-// create deck
-
-// class Deck {
-//   constructor(suit, value) {
-//     this.suit = suit;
-//     this.value = value;
-//   }
-// }
-
-// class Card {
-//   constructor(suits, value) {
-//     this.suit = suit;
-//     this.value = value;
-//   }
-// }
-
-// JAVASCRIPT CHEAT SHEET
-
-// JAVASCRTIPT ARRAY METHODS
-// .filter etc
-
-// only return cards that are hearts
-// let hearts = deck.filter(val => {
-//   return val.face < 13;
-// });
-
-// how to filter values that arent strings out of array
-// let arr = [1, 2, 2, 4, 56, 7, 454, "steve"];
-
-// let onlyStrings = arr.filter(element => {
-//   return typeof element == "string";
-// });
-
-// console.log(onlyStrings);
-// math.random
-
-// var array = [
-//     {card}
-//     {card}
-//     {card}
-// ]
-
-// function chunkArray(myArray, chunk_size) {
-//   var index = 0;
-//   var arrayLength = myArray.length;
-//   var tempArray = [];
-
-//   for (index = 0; index < arrayLength; index += chunk_size) {
-//     myChunk = myArray.slice(index, index + chunk_size);
-// Do something if you want with the group
-//     tempArray.push(myChunk);
-//   }
-
-//   return tempArray;
-// }
-// Split in group of 3 items
-// var result = chunkArray(cards, 2);
-// Outputs : [ [1,2,3] , [4,5,6] ,[7,8] ]
-// console.log(result);
-
-// WAR FUNCTION
-// function war(a, b) {
-//   if (playerOne(a) === playerTwo(b)) {
-//     return alert("WAR!!!!!");
-//   } else {
-//     play();
-//   }
-// }
-//
-
-// POWER POINT SENT OUT BY NOAH. TRY USING BUILDING BLOCKS OF CODE ABOVE TO BUILD EACH OUT.
-// startGame()
-// cardDeck = [];
-// shuffle()
-// distributeCards()
-// firstPlayerDeck = [];
-// secondPlayerDeck = [];
 // addCardsInPlay()
 // conductTurn()
 // finishTurn()
@@ -268,24 +145,6 @@ console.log(deck.shuffle());
 // winnerOfRound = null;
 // assignWinnerCards()
 // determineWinner()
+
+// startGame()
 // endGame()
-
-// creating classes and sub classes
-// class Animal {
-//   constructor(size, color, dangerous) {
-//     this.size = size;
-//     this.color = color;
-//     this.dangerous = dangerous;
-//   }
-// }
-
-// class Pet extends Animal {
-//   constructor(size, color, dangerous, habitat) {
-//     super(size, color, dangerous);
-
-//     this.habitat = habitat;
-//   }
-// }
-// const bear = new Pet("large", "black", false, "domestic");
-// console.log(bear);
-// //
