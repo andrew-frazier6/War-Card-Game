@@ -24,6 +24,7 @@
 //     this.face = face;
 //   }
 // }
+//
 //  DECK #5 BUILT
 let newBoxDeck = [];
 let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
@@ -45,7 +46,7 @@ function buildDeck() {
   console.log(newBoxDeck);
 }
 buildDeck();
-
+// SHUFFLE
 let shuffleDeck = newBoxDeck;
 function shuffle() {
   for (let i = shuffleDeck.length - 1; i > 0; i--) {
@@ -57,6 +58,20 @@ function shuffle() {
   return shuffleDeck;
 }
 shuffle();
+
+let dealingCards = shuffleDeck;
+function deal() {
+  for (let i = 0; i < newBoxDeck.length; i++) {
+    if (i % 2 === 0) {
+      playerOne.push(newBoxDeck[i]);
+    } else {
+      playerTwo.push(newBoxDeck[i]);
+    }
+  }
+}
+deal();
+console.log(playerOne, playerTwo);
+
 // BUILD DECK #3
 //   buildDeck() {
 //     let suit = ["Hearts", "Spades", "Diamonds", "Clubs"];
