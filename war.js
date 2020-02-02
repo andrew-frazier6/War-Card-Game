@@ -1,12 +1,3 @@
-let newBoxDeck = [];
-let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
-let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-let faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
-let playerOne = [];
-let playerTwo = [];
-let playerOneTable = [];
-let playerTwoTable = [];
-
 // PLAYER
 // class Player {
 //   constructor(name) {
@@ -33,19 +24,39 @@ let playerTwoTable = [];
 //     this.face = face;
 //   }
 // }
-//  DECK #5
+//  DECK #5 BUILT
+let newBoxDeck = [];
+let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
+let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+let playerOne = [];
+let playerTwo = [];
+let playerOneTable = [];
+let playerTwoTable = [];
+
 function buildDeck() {
-  for (let i = 0; i < faces.length; i++) {
-    for (let j = 0; j < suits.length; j++) {
-      let playingCard = { face: faces[i], suit: suits[j] };
+  let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
+  let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  for (let i = 0; i < suits.length; i++) {
+    for (let j = 0; j < rank.length; j++) {
+      let playingCard = { suits: suits[i], rank: rank[j] };
       newBoxDeck.push(playingCard);
     }
   }
+  console.log(newBoxDeck);
 }
-
 buildDeck();
-console.log(newBoxDeck);
 
+let shuffleDeck = newBoxDeck;
+function shuffle() {
+  for (let i = shuffleDeck.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = shuffleDeck[i];
+    shuffleDeck[i] = shuffleDeck[j];
+    shuffleDeck[j] = temp;
+  }
+  return shuffleDeck;
+}
+shuffle();
 // BUILD DECK #3
 //   buildDeck() {
 //     let suit = ["Hearts", "Spades", "Diamonds", "Clubs"];
