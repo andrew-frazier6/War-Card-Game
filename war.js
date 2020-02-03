@@ -31,6 +31,8 @@ let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
 let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 let playerOne = [];
 let playerTwo = [];
+let playerOneTable = [];
+let playerTwoTable = [];
 let table = [];
 
 function buildDeck() {
@@ -72,26 +74,40 @@ deal();
 console.log(playerOne, playerTwo);
 
 // A ROUND
-function theRound() {
-  if (playerOne.length && playerTwo.length !== 0) {
-  }
-}
-
 function showCard() {
-  table.push(playerOne[0], playerTwo[0]);
-  playerOne.splice(0, 1);
-  playerTwo.splice(0, 1);
-  if (table[0] > table[1]) {
-    playerOne.push(table[0], table[1]);
-    console.log("Winner. Player 1");
-  } else if (table[1] > table[0]) {
-    playerTwo.push(table[0], table[1]);
-    console.log("Winner. Player 2");
+  if (playerOne.length && playerTwo.length !== 0) {
+    playerOneTable.push(playerOne[0]), playerTwoTable.push(playerTwo[0]);
+    playerOne.splice(0, 1);
+    playerTwo.splice(0, 1);
   }
 }
 
-theRound();
+function highCard() {
+  if (playerOneTable[0].rank > playerTwoTable[1].rank) {
+    console.log("Winner. Player 1");
+    playerOne.push(playerOneTable[0], playerTwoTable[1]);
+  } else if (playerTwoTable[1].rank > playerOneTable[0].rank) {
+    console.log("Winner. Player 2");
+    playerTwo.push(playerTwoTable[0], playerOneTable[1]);
+  } else playerOneTable[0].rank === playerTwoTable[1].rank;
+  console.log("war");
+}
 
+console.log(playerOneTable, playerTwoTable);
+showCard();
+console.log(playerOneTable, playerTwoTable);
+highCard();
+
+// END GAME
+function endGame() {
+  if ((playerOne.length = 52)) {
+    console.log("Player 1 won the war!");
+  } else if ((playerTwo.length = 52)) {
+    console.log("Player 2 won the war!");
+  } else {
+    play();
+  }
+}
 // BUILD DECK #3
 //   buildDeck() {
 //     let suit = ["Hearts", "Spades", "Diamonds", "Clubs"];
