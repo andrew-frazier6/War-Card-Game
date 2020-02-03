@@ -31,8 +31,7 @@ let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
 let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 let playerOne = [];
 let playerTwo = [];
-let playerOneTable = [];
-let playerTwoTable = [];
+let table = [];
 
 function buildDeck() {
   let suits = ["Hearts", "Spades", "Diamonds", "Clubs"];
@@ -71,6 +70,27 @@ function deal() {
 }
 deal();
 console.log(playerOne, playerTwo);
+
+// A ROUND
+function theRound() {
+  if (playerOne.length && playerTwo.length !== 0) {
+  }
+}
+
+function showCard() {
+  table.push(playerOne[0], playerTwo[0]);
+  playerOne.splice(0, 1);
+  playerTwo.splice(0, 1);
+  if (table[0] > table[1]) {
+    playerOne.push(table[0], table[1]);
+    console.log("Winner. Player 1");
+  } else if (table[1] > table[0]) {
+    playerTwo.push(table[0], table[1]);
+    console.log("Winner. Player 2");
+  }
+}
+
+theRound();
 
 // BUILD DECK #3
 //   buildDeck() {
