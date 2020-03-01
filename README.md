@@ -1,6 +1,6 @@
 ## WAR CARD GAME
 
-- Play the game in console https://andrew-frazier6.github.io/project-4-hangman/
+- Play the game in console https://andrew-frazier6.github.io/War-Card-Game/
 
 ## ABOUT
 
